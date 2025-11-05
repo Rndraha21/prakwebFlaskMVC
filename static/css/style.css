@@ -1,0 +1,345 @@
+:root {
+  --bg-dark: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-primary: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-success: #22c55e;
+  --accent-info: #60a5fa;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+.title {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: var(--accent-info);
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50px);
+}
+
+#hero-content .text-primary {
+  color: var(--text-primary) !important;
+}
+
+#hero-content .text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+#tentang .text-primary {
+  color: var(--text-primary) !important;
+}
+
+#tentang .text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+#tentang .focus {
+  border-left: 4px solid var(--bg-tertiary);
+  padding-left: 6px;
+  border-radius: 8px 0 0 8px;
+}
+
+#tentang .card-hover {
+  transition: all 0.3s ease;
+  background: var(--bg-secondary) !important;
+}
+
+#tentang .card-hover:hover {
+  transform: scale(1.05);
+}
+
+.body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.body::-webkit-scrollbar {
+  width: 0;
+}
+
+.breadcrumb-link {
+  color: var(--text-secondary);
+}
+
+#mainBreadcrumb {
+  transition: font-size 0.3s ease;
+  border-left: 4px solid var(--bg-tertiary);
+  border-bottom: 1px solid var(--bg-tertiary);
+  padding: 1rem 1rem;
+  border-radius: 12px;
+}
+
+#breadTitle.hidden {
+  display: none;
+}
+
+#breadTitle.show {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+#breadTitle.show img {
+  width: 50px;
+}
+
+div.container {
+  padding-top: 6rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.navbar {
+  background-color: var(--bg-secondary);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar a {
+  color: var(--text-primary);
+}
+
+.navbar a:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+.card {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+.card-title {
+  color: var(--text-primary);
+}
+
+.card-subtitle,
+.card-text {
+  color: var(--text-secondary) !important;
+}
+
+.card-footer {
+  color: var(--text-primary);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary) !important;
+  border-color: var(--accent-primary) !important;
+  color: var(--bg-dark) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  color: var(--bg-dark) !important;
+}
+
+form {
+  width: 50%;
+}
+
+.form-control {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--bg-tertiary) !important;
+}
+
+.form-control:focus {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+#table {
+  width: 100%;
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary);
+  border-color: var(--bg-tertiary) !important;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+#table thead th {
+  color: var(--text-primary);
+  border-bottom-width: 2px;
+  border-bottom-color: var(--bg-tertiary);
+}
+
+#table thead tr th,
+#table tbody tr td {
+  padding: 10px;
+}
+
+#table > tbody > tr:nth-of-type(odd) {
+  background-color: var(--bg-dark);
+  color: var(--text-secondary);
+}
+#table > tbody > tr:nth-of-type(even) {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+#table > tbody > tr:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.bg-success {
+  background-color: var(--accent-success) !important;
+  color: var(--bg-dark) !important;
+}
+
+.bg-success:hover {
+  color: var(--text-primary) !important;
+}
+
+.btn-info {
+  background-color: var(--accent-info) !important;
+  border-color: var(--accent-info) !important;
+  color: var(--bg-dark) !important;
+}
+
+.btn-info:hover {
+  background-color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  color: var(--bg-dark) !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--accent-info) !important;
+  color: var(--bg-primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  color: var(--bg-dark) !important;
+}
+
+input::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+i.fa-bars {
+  outline: none;
+  color: var(--text-primary);
+}
+
+footer {
+  margin-top: 4rem;
+}
+
+.right-content img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+#error {
+  background: var(--bg-dark);
+}
+
+.reveal-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-element.fade-in {
+  transform: none;
+}
+
+.reveal-element.slide-up {
+  transform: translateY(20px);
+}
+
+.reveal-element.slide-left {
+  transform: translateX(-30px);
+}
+
+.reveal-element.slide-right {
+  transform: translateX(30px);
+}
+
+.reveal-element[data-aos-delay="100"] {
+  transition-delay: 0.1s;
+}
+.reveal-element[data-aos-delay="200"] {
+  transition-delay: 0.2s;
+}
+.reveal-element[data-aos-delay="300"] {
+  transition-delay: 0.3s;
+}
+.reveal-element[data-aos-delay="400"] {
+  transition-delay: 0.4s;
+}
+.reveal-element[data-aos-delay="500"] {
+  transition-delay: 0.5s;
+}
+
+@media (max-width: 768px) {
+  #breadTitle.show {
+    display: none;
+  }
+
+  .right-content {
+    display: none;
+  }
+
+  form {
+    width: 100%;
+  }
+}

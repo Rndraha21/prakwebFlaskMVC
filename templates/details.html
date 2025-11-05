@@ -1,0 +1,81 @@
+{% extends 'layout.html' %} {% block title %} Detail Karyawan {% endblock %} {%
+block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <h2 class="title text-center mb-5">Detail Karyawan</h2>
+
+      <div
+        class="card"
+        style="
+          background-color: var(--bg-secondary);
+          border-color: var(--bg-tertiary);
+        "
+      >
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img
+                src="{{ data.gambar }}"
+                class="img-fluid rounded-circle"
+                alt="Foto {{ data.nama }}"
+                style="
+                  width: 150px;
+                  height: 150px;
+                  object-fit: cover;
+                  border: 3px solid var(--bg-tertiary);
+                "
+              />
+            </div>
+
+            <div class="col-md-8">
+              <h3>{{ data.nama }}</h3>
+              <p
+                class="fs-5"
+                style="color: var(--text-secondary); margin-top: -5px"
+              >
+                {{ data.jabatan }}
+              </p>
+
+              <hr style="border-color: var(--bg-tertiary)" />
+
+              <ul class="list-unstyled" style="color: var(--text-primary)">
+                <li>
+                  <i class="fa-solid fa-location-dot"></i> {{ data.alamat }}
+                </li>
+                <li><i class="fa-solid fa-envelope"></i> {{ data.email }}</li>
+                <li>
+                  <i class="fa-solid fa-circle-user"></i> {{ data.no_hp }}
+                </li>
+              </ul>
+
+              <div class="mt-4">
+                <div class="mb-2 gap-4">
+                  <a
+                    href="{{ url_for('update', id=data.id) }}"
+                    class="btn btn-info badge fs-6 me-2 text-decoration-none"
+                    >Edit</a
+                  >
+                  <a
+                    href="{{ url_for('delete', id=data.id) }}"
+                    class="btn btn-danger badge fs-6 text-decoration-none"
+                    >Hapus</a
+                  >
+                </div>
+                <div>
+                  <a
+                    href="{{ url_for('read') }}"
+                    class="btn btn-outline-secondary badge fs-6 text-decoration-none"
+                    >Kembali</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'layout.html' %} {% block title %} Home {% endblock %} {% block id
+%}home{% endblock %} {% block content %}
+<!-- Home/hero -->
+<div class="container" id="hero">
+  <!-- Breadcrumb -->
+  <div id="breadContainer">
+    <nav aria-label="breadcrumb" id="mainBreadcrumb" class="mb-4">
+      <div class="d-flex gap-5" id="container-Navitem">
+        <div id="breadTitle" class="hidden">
+          <img src="/img/logo.ico" alt="Logo StaphSec" width="30px" />
+          <span
+            ><a
+              href="#hero-content"
+              class="text-decoration-none breadcrumb-link"
+              >StaphSec</a
+            ></span
+          >
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="#tentang" class="breadcrumb-link text-decoration-none"
+            >Tentang</a
+          >
+          <a href="#" class="breadcrumb-link text-decoration-none">Tim Kami</a>
+          <a href="#" class="breadcrumb-link text-decoration-none">Kontak</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="row" id="hero-content">
+    <div class="row align-items-center">
+      <div class="col-md-6 reveal-element slide-right" data-aos-delay="200">
+        <h1 class="display-4 text-primary mb-3">
+          Kelola Karyawan, Tingkatkan Produktivitas.
+        </h1>
+        <p class="lead text-secondary mb-4">
+          SIKarya adalah Sistem Informasi Karyawan yang dirancang untuk
+          menyederhanakan manajemen data sumber daya manusia dalam perusahaan.
+        </p>
+        <ul class="list-unstyled mb-4 text-primary">
+          <li>
+            <i class="fa-solid fa-server"></i>
+            Data Karyawan Terpusat & Akurat
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-info"></i>
+            Akses Cepat Informasi Penting
+          </li>
+          <li>
+            <i class="fa-solid fa-signal"></i>
+            Laporan & Analisis Kinerja
+          </li>
+        </ul>
+        <div class="d-flex flex-md-row flex-column gap-4">
+          <div>
+            <a
+              href="{{ url_for('read') }}"
+              class="btn btn-primary btn-lg text-decoration-none"
+              >Lihat Data Karyawan</a
+            >
+          </div>
+          <div>
+            <a class="btn btn-outline-secondary btn-lg text-decoration-none"
+              >Pelajari Lebih Lanjut</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 right-content reveal-element slide-left" data-aos-delay="200">
+        <img src="/img/logo.png" alt="Gambar SIKarya" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tentang -->
+<div class="container py-5" id="tentang">
+  <h2 class="text-center mb-5 text-primary title reveal-element fade-in" data-aos-delay="200">Tentang SIKarya</h2>
+  <div class="row reveal-element fade-in" data-aos-delay="500">
+    <div class="col-md-6">
+      <h3 class="text-secondary">Apa itu SIKarya?</h3>
+      <div class="mb-5">
+        <p class="text-secondary">
+          SIKarya adalah platform terpadu yang dirancang untuk menyederhanakan
+          dan mengoptimalkan pengelolaan data karyawan di lingkungan
+          <strong>StaphSec</strong>. Dibangun dengan visi untuk meningkatkan
+          efisiensi operasional dan akurasi data, SIKarya memungkinkan
+          departemen Sumber Daya Manusia dan manajer untuk mengakses, mengelola,
+          dan menganalisis informasi karyawan dengan mudah dan aman.
+        </p>
+        <p class="text-secondary focus">
+          Fokus utama kami adalah menjadi sumber informasi tunggal yang
+          komprehensif untuk semua data SDM, mulai dari profil pribadi hingga
+          informasi kontak penting.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-5">
+      <h3 class="text-secondary">Fitur-fitur Utama</h3>
+      <div class="card card-hover px-4 py-2 mb-3">
+        <h5>Manajemen Data Karyawan</h5>
+        <p>
+          Pencatatan dan pembaruan detail pribadi, riwayat jabatan, dan
+          informasi kontak.
+        </p>
+      </div>
+      <div class="card card-hover px-4 py-2 mb-3">
+        <h5>Pencarian dan Filter Cepat</h5>
+        <p>
+          Temukan informasi karyawan secara instan dengan fitur pencarian yang
+          intuitif.
+        </p>
+      </div>
+      <div class="card card-hover px-4 py-2 mb-3">
+        <h5>Akses Informasi yang Aman</h5>
+        <p>
+          Data tersimpan dengan aman, memastikan integritas dan kerahasiaan
+          informasi sensitif.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row reveal-element slide-up" data-aos-delay="500">
+    <h3 class="text-secondary">Manfaat bagi Anda</h3>
+    <div class="col-md-4">
+      <div class="card card-hover px-4 py-2 mb-3">
+        <h5>Efisiensi Tinggi</h5>
+        <p>Mengurangi beban kerja administrasi dan mempercepat proses.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-hover px-4 py-2 mb-3">
+        <h5>Akurasi Data Terjamin</h5>
+        <p>Meminimalkan kesalahan dengan pengelolaan data yang terpusat.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-hover px-4 py-2 mb-3">
+        <h5>Akurasi Data Terjamin</h5>
+        <p>Meminimalkan kesalahan dengan pengelolaan data yang terpusat.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

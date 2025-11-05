@@ -1,0 +1,72 @@
+{% extends 'layout.html' %} {% block title %} Update Data Karyawan {% endblock
+%} {% block content %}
+<div
+  class="container d-flex flex-column justify-content-center align-items-center"
+>
+  <h2 class="text-center title mb-5">Edit data karyawan</h2>
+  <form action="{{ url_for('update', id=data.id) }}" method="POST">
+    <div class="mb-3">
+      <label for="nama" class="form-label">Nama</label>
+      <input
+        type="text"
+        name="nama"
+        id="nama"
+        class="form-control"
+        value="{{ data.nama }}"
+        autocomplete="off"
+        placeholder="Budi Santoso"
+        required
+      />
+
+      <label for="jabatan" class="form-label">Jabatan</label>
+      <input
+        type="text"
+        name="jabatan"
+        id="jabatan"
+        class="form-control"
+        value="{{ data.jabatan }}"
+        autocomplete="off"
+        placeholder="Manager"
+        required
+      />
+
+      <label for="alamat" class="form-label">Alamat</label>
+      <input
+        type="text"
+        name="alamat"
+        id="alamat"
+        class="form-control"
+        value="{{ data.alamat }}"
+        autocomplete="off"
+        placeholder="Gamping, Sleman, Yogyakarta"
+        required
+      />
+
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="email"
+        value="{{ data.email }}"
+        autocomplete="off"
+        placeholder="budi@gmail.com"
+        required
+      />
+
+      <label for="no_hp" class="form-label">No. HP</label>
+      <input
+        type="text"
+        name="no_hp"
+        class="form-control"
+        id="no_hp"
+        value="{{ data.no_hp}}"
+        autocomplete="off"
+        placeholder="0821-1122-3344"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+{% endblock %}
