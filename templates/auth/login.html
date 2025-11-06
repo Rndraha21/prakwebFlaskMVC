@@ -1,0 +1,42 @@
+{% extends 'auth/login-layout.html' %} {% block Login %} Sign In {% endblock %}
+{% block content %}
+<div class="login-container">
+  <div class="login-content rounded p-4">
+    <h2 class="text-center title mb-5">Login</h2>
+    <form id="login" action="{{ url_for('login') }}" method="POST">
+      <div class="mb-3">
+        <p class="text-danger">{{ message }}</p>
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          class="form-control"
+          autocomplete="off"
+          placeholder="Masukkan username"
+          required
+        />
+
+        <label for="password" class="form-label">Password</label>
+        <div id="pass-container">
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="password"
+            autocomplete="off"
+            placeholder="Masukkan password"
+            required
+          />
+          <img src="/img/invisibility.svg" alt="Show Password" id="visible"/>
+        </div>
+      </div>
+      <p>
+        Belum punya akun?
+        <a href="{{ url_for('sign_up') }}">Daftar disini.</a>
+      </p>
+      <button type="submit" class="rounded">Login</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

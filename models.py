@@ -66,8 +66,10 @@ class DataKaryawan:
     # Method/fungsi untuk mengambil semua data karyawan, jika method tidak dimasukkan parameter id yang sama dengan None (nilai default) maka akan mengembalikan semua data karyawan, tapi jika memasukkan parameter id tertentu maka hanya akan mengembalikan data pada id tersebut
     def get(self, id=None):
         if id is None:
+            # Kembalikan semua data karyawan
             return self._data_karyawan
         else:
+            # Kembalikan data karyawan dengan id itu sendiri
             for item in self._data_karyawan:
                 if item['id'] == id:
                     return item
@@ -107,3 +109,24 @@ class DataKaryawan:
                 results.append(item)
 
         return results
+
+
+class Users:
+    def __init__(self):
+        self._users = [
+        ]
+        
+        self._id = 1
+
+    def _get_id(self):
+        id_baru = self._id
+        self._id += 1
+        return id_baru
+
+    def get_user(self):
+        return self._users
+
+    def add_user(self, data):
+        data['id'] = self._get_id()
+        self._users.append(data)
+        return True

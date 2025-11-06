@@ -34,14 +34,27 @@
           <span><i class="fa-solid fa-bars"></i></span>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto d-flex align-items-center">
             <li class="nav-item">
               <a href="{{ url_for('index') }}" class="nav-link fs-6">Beranda</a>
             </li>
+            {% if "username" in session %}
             <li class="nav-item">
               <a href="{{ url_for('read') }}" class="nav-link fs-6"
-                >Data Karyawan</a
+                >Kelola Data</a
               >
+            </li>
+            <div class="rounded p-1 px-2" style="background-color: var(--accent-primary); color:var(--bg-dark)">{{ session["username"] }}</div>
+            <li class="nav-item">
+              <a href="{{ url_for('logout') }}" class="nav-link fs-6 bg-danger rounded py-1 px-2 ms-2"
+                >Logout</a
+              >
+            </li>
+            {% else %}
+            <li>
+              <a href="{{ url_for('login') }}" class="nav-link fs-6">Login</a>
+            </li>
+            {% endif %}
             </li>
           </ul>
         </div>
@@ -71,6 +84,9 @@
 
     <!-- Block content -->
     {% block content %} {% endblock %}
+
+    <!-- Datetime Element -->
+    <div id="datetime">00:00:00</div>
 
     <!-- Footer -->
     <footer class="card text-center">

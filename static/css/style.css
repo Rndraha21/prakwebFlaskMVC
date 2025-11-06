@@ -10,9 +10,32 @@
   --accent-info: #60a5fa;
 }
 
+@font-face {
+  font-family: "digital-7";
+  src: url("../fonts/digital-7.ttf") format("truetype");
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
+}
+
+#datetime {
+  position: fixed;
+  text-align: center;
+  bottom: 10px;
+  right: 10px;
+  width: 90px;
+  z-index: 1000;
+  cursor: not-allowed;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: "digital-7", monospace;
+  font-size: 24px;
+  color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+  padding: 4px 6px;
+  border-radius: 10px;
 }
 
 .title {
@@ -68,6 +91,7 @@ html {
   color: var(--text-primary);
   font-family: sans-serif;
   line-height: 1.6;
+  position: relative;
 }
 
 .body::-webkit-scrollbar {
@@ -76,6 +100,10 @@ html {
 
 .breadcrumb-link {
   color: var(--text-secondary);
+}
+
+.bg-secondary {
+  background: var(--bg-secondary);
 }
 
 #mainBreadcrumb {
@@ -330,6 +358,48 @@ footer {
   transition-delay: 0.5s;
 }
 
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-content {
+  background: var(--bg-secondary);
+  min-width: 400px;
+}
+
+form#login {
+  width: 100%;
+}
+
+form#login button {
+  background: var(--accent-info);
+  color: var(--text-primary);
+  border: none;
+  padding: 8px;
+  width: 100%;
+}
+
+form#login button:hover {
+  background: var(--accent-primary);
+  color: var(--bg-secondary);
+}
+
+form#login #pass-container {
+  position: relative;
+}
+
+form#login img {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
 @media (max-width: 768px) {
   #breadTitle.show {
     display: none;
@@ -342,4 +412,8 @@ footer {
   form {
     width: 100%;
   }
+
+  .login-content {
+  min-width: 350px;
+}
 }

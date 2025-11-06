@@ -42,7 +42,7 @@ if (pageId === "home") {
   });
 }
 
-// Animasi
+// Animasi page load
 const revealElements = document.querySelectorAll(".reveal-element");
 
 const observerOptions = {
@@ -64,3 +64,28 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 revealElements.forEach((element) => {
   revealObserver.observe(element);
 });
+
+const datetime = () => {
+  let now = new Date();
+  let hours = now.getHours();
+  let minute = now.getMinutes();
+  let second = now.getSeconds();
+
+  const addZero = (num) => {
+    if (num < 10) {
+      return "0" + num;
+    }
+
+    return num;
+  };
+
+  hours = addZero(hours);
+  minute = addZero(minute);
+  second = addZero(second);
+
+  const stringTime = `${hours}:${minute}:${second}`;
+  document.getElementById("datetime").innerHTML = stringTime;
+};
+
+setInterval(datetime, 1000);
+datetime()
