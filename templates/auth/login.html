@@ -5,7 +5,9 @@
     <h2 class="text-center title mb-5">Login</h2>
     <form id="login" action="{{ url_for('login') }}" method="POST">
       <div class="mb-3">
-        <p class="text-danger">{{ message }}</p>
+        {% if message %}
+        <p class="text-danger" id="flash-msg-container">{{ message }}</p>
+        {% endif %}
         <label for="username" class="form-label">Username</label>
         <input
           type="text"
@@ -28,7 +30,7 @@
             placeholder="Masukkan password"
             required
           />
-          <img src="/img/invisibility.svg" alt="Show Password" id="visible"/>
+          <img src="/img/invisibility.svg" alt="Show Password" id="visible" />
         </div>
       </div>
       <p>

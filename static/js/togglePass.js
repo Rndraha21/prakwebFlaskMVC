@@ -22,3 +22,12 @@ visibleIcon.addEventListener("click", () => {
     invisibility();
   }
 });
+
+// handle timeout flash message
+const flashMsg = document.getElementById("flash-msg-container")
+
+if (flashMsg) {
+  setTimeout(() => {
+    flashMsg.style.display = "none"
+  }, 3000);
+}

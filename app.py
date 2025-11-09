@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, abort, session
 from models import DataKaryawan, Users
-
+import re
 
 # Lebih fleksibel jadi saya define sendiri nama template foldernya dan static foldernya:)
 app = Flask(__name__, template_folder="templates",
@@ -26,11 +26,9 @@ def login():
         return render_template("auth/login.html")
     elif request.method == "POST":
         data_user = user.get_user()
-
+        
         username = request.form["username"]
         password = request.form["password"]
-        print(username)
-        print(password)
 
         for i, item in enumerate(data_user):
             if item["username"] == username and item["password"] == password:
@@ -47,22 +45,46 @@ def login():
 @app.route("/sign_up", methods=["POST", "GET"])
 def sign_up():
     data_user = user.get_user()
-    print(data_user)
+    msg = []
 
     if request.method == "GET":
         return render_template("auth/signup.html", methods=["POST", "GET"])
+    
     elif request.method == "POST":
-        data_baru = {
-            "username": request.form["username"],
-            "password": request.form["password"]
-        }
+        username = request.form["username"]
+        password = request.form["password"]
 
-        user.add_user(data_baru)
-        return redirect(url_for("login"))
+        # Validasi username
+        if len(username) < 4:
+            msg.append("Username terlalu pendek.")
+        
+        # Cek username sudah digunakan
+        username_exists = any(item["username"] == username for item in data_user)
+        if username_exists:
+            msg.append("Username telah digunakan.")
+        
+        # Validasi password
+        if len(password) < 8:
+            msg.append("Password terlalu pendek, minimal 8 karakter.")
+        if not re.search(r'\d', password):
+            msg.append("Password harus mengandung minimal satu angka.")
 
+        # Jika tidak ada error, buat user baru
+        if not msg:
+            data_baru = {
+                "username": username,
+                "password": password
+            }
+            user.add_user(data_baru)
+            return redirect(url_for("login"))
+    
+    return render_template("auth/signup.html", msg=msg)
 
 @app.route("/logout")
 def logout():
+    if "username" not in session:
+        return render_template("error.html"), 404
+
     session.pop("username")
     flash("Anda berhasil logout.", "success")
     return redirect(url_for("index"))

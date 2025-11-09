@@ -42,29 +42,7 @@ if (pageId === "home") {
   });
 }
 
-// Animasi page load
-const revealElements = document.querySelectorAll(".reveal-element");
-
-const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.1,
-};
-
-const revealObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-revealElements.forEach((element) => {
-  revealObserver.observe(element);
-});
-
+// wkwk nerapin ilmu aja ini mah:)
 const datetime = () => {
   let now = new Date();
   let hours = now.getHours();
@@ -89,3 +67,12 @@ const datetime = () => {
 
 setInterval(datetime, 1000);
 datetime()
+
+
+const flasMsg = document.getElementById("flash-msg-container")
+
+if (flasMsg) {
+  setTimeout(() => {
+    flasMsg.style.display = "none"
+  }, 3000);
+}
