@@ -63,11 +63,13 @@ html {
   color: var(--text-secondary) !important;
 }
 
-#tentang .text-primary {
+#tentang .text-primary,
+#tim .text-primary {
   color: var(--text-primary) !important;
 }
 
-#tentang .text-secondary {
+#tentang .text-secondary,
+#tim .text-secondary {
   color: var(--text-secondary) !important;
 }
 
@@ -84,6 +86,67 @@ html {
 
 #tentang .card-hover:hover {
   transform: scale(1.05);
+}
+
+#tim .bg-secondary {
+  width: 100%;
+  margin: 0;
+  background: var(--accent-primary) !important;
+}
+
+#tim img {
+  height: 25rem;
+}
+
+#service .text-primary {
+  color: var(--text-primary) !important;
+}
+
+#service iframe {
+  width: 100%;
+}
+
+#service form {
+  width: 100%;
+}
+
+#service form .card-msg {
+  background: var(--bg-secondary);
+  padding: 2rem 1rem;
+}
+
+#service form input,
+#service form textarea {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+#service form i {
+  color: var(--accent-info);
+}
+
+#service form textarea {
+  resize: none;
+}
+
+#service form textarea::placeholder,
+#service form input::placeholder {
+  color: var(--bg-tertiary) !important;
+}
+
+#service form button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem 2rem;
+  background: var(--accent-primary);
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .body {

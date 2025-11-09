@@ -66,13 +66,12 @@ const datetime = () => {
 };
 
 setInterval(datetime, 1000);
-datetime()
+datetime();
 
-
-const flasMsg = document.getElementById("flash-msg-container")
+const flasMsg = document.getElementById("flash-msg-container");
 
 if (flasMsg) {
   setTimeout(() => {
-    flasMsg.style.display = "none"
+    flasMsg.style.display = "none";
   }, 3000);
 }

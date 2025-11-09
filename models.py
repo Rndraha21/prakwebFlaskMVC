@@ -110,7 +110,6 @@ class DataKaryawan:
 
         return results
 
-
 class Users:
     def __init__(self):
         self._users = [

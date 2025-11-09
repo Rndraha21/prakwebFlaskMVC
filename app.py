@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, abort, session
+from flask import Flask, render_template, request, redirect, url_for, flash, abort, session,jsonify
 from models import DataKaryawan, Users
 import re
 
@@ -26,7 +26,7 @@ def login():
         return render_template("auth/login.html")
     elif request.method == "POST":
         data_user = user.get_user()
-        
+
         username = request.form["username"]
         password = request.form["password"]
 
@@ -49,7 +49,7 @@ def sign_up():
 
     if request.method == "GET":
         return render_template("auth/signup.html", methods=["POST", "GET"])
-    
+
     elif request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -57,12 +57,13 @@ def sign_up():
         # Validasi username
         if len(username) < 4:
             msg.append("Username terlalu pendek.")
-        
+
         # Cek username sudah digunakan
-        username_exists = any(item["username"] == username for item in data_user)
+        username_exists = any(item["username"] ==
+                              username for item in data_user)
         if username_exists:
             msg.append("Username telah digunakan.")
-        
+
         # Validasi password
         if len(password) < 8:
             msg.append("Password terlalu pendek, minimal 8 karakter.")
@@ -77,8 +78,9 @@ def sign_up():
             }
             user.add_user(data_baru)
             return redirect(url_for("login"))
-    
+
     return render_template("auth/signup.html", msg=msg)
+
 
 @app.route("/logout")
 def logout():
