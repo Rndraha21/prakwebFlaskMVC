@@ -7,7 +7,7 @@
     <nav aria-label="breadcrumb" id="mainBreadcrumb" class="mb-4">
       <div class="d-flex gap-5" id="container-Navitem">
         <div id="breadTitle" class="hidden">
-          <img src="/img/logo.ico" alt="Logo StaphSec" width="30px" />
+          <img src="/images/icons/logo.ico" alt="Logo StaphSec" width="30px" />
           <span
             ><a
               href="#hero-content"
@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="col-md-6 right-content animate-element">
-        <img src="/img/logo.png" alt="Gambar SIKarya" />
+        <img src="/images/icons/logo.png" alt="Gambar SIKarya" />
       </div>
     </div>
   </div>
@@ -139,8 +139,8 @@
     </div>
     <div class="col-md-4">
       <div class="card card-hover px-4 py-2 mb-3">
-        <h5>Akurasi Data Terjamin</h5>
-        <p>Meminimalkan kesalahan dengan pengelolaan data yang terpusat.</p>
+        <h5>Data Terstruktur</h5>
+        <p>Memudahkan dalam mengelola data, menambah, mengubah, dan menghapus.</p>
       </div>
     </div>
     <div class="col-md-4">
@@ -161,23 +161,23 @@
   >
     <div class="mb-3 card animate-element">
       <div class="d-flex flex-column align-items-center">
-        <img src="img/robin.png" alt="Robin" />
+        <img src="images/avatar/robin.png" alt="Robin" />
         <div class="bg-secondary text-center p-2">
           <p class="text-primary mb-0 fs-5">Robin Ndraha</p>
         </div>
       </div>
     </div>
-    <div class="mb-3 card animate-element" id="avatar">
+    <div class="mb-3 card animate-element">
       <div class="d-flex flex-column align-items-center">
-        <img src="img/miya.png" alt="Miya" />
+        <img src="images/avatar/miya.png" alt="Miya" />
         <div class="bg-secondary text-center p-2">
           <p class="text-primary mb-0 fs-5">Awalisani Umiyati</p>
         </div>
       </div>
     </div>
-    <div class="mb-3 card animate-element" id="avatar">
+    <div class="mb-3 card animate-element">
       <div class="d-flex flex-column align-items-center">
-        <img src="img/habib.png" alt="Habib" />
+        <img src="images/avatar/habib.png" alt="Habib" />
         <div class="bg-secondary text-center p-2">
           <p class="text-primary mb-0 fs-5">Habiburrahman</p>
         </div>
@@ -190,22 +190,56 @@
 <div class="container" id="service">
   <h2 class="text-center mb-5 text-primary title animate-element">Service</h2>
   <div class="row">
-    <div class="col-md-6 animate-element mb-4">
-      <h3 class="text-secondary mb-3">Lokasi</h3>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1009.9823839987996!2d110.32975748083773!3d-7.793524804354927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59dd471e4c1b%3A0xee5472c4dfd1658b!2sFakultas%20Teknik%20dan%20Teknologi%20Informasi%20UNJAYA!5e0!3m2!1sid!2sid!4v1762687488087!5m2!1sid!2sid"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        class="rounded"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+    <div class="col-md-8 animate-element mb-4">
+      <h3 class="text-secondary mb-3">Proyek Unggulan Kami</h3>
+      <div class="row">
+        <div class="col-md-6 mb-3 proyek-container">
+          <div class="proyek-img-container">
+            <img
+              src="images/projects/proyek-1.png"
+              alt="Proyek 1"
+              width="100%"
+            />
+            <button class="detail-proyek" id="detail-proyek-1">
+              Selengkapnya
+            </button>
+          </div>
+          <p>
+            Web ini membahas Sustainable Development Goal (SDG) nomor 4:
+            Kualitas Pendidikan. SDG 4 menekankan pentingnya pendidikan
+            berkualitas yang inklusif dan adil, serta memberikan kesempatan
+            belajar sepanjang hayat bagi semua orang. Pendidikan adalah kunci
+            untuk membuka potensi individu, meningkatkan kesejahteraan, dan
+            berkontribusi pada masyarakat yang progresif.
+          </p>
+        </div>
+        <div class="col-md-6 mb-3 proyek-container">
+          <div class="proyek-img-container">
+            <img
+              src="images/projects/proyek-2.png"
+              alt="Proyek 2"
+              width="100%"
+            />
+            <button class="detail-proyek" id="detail-proyek-2">
+              Selengkapnya
+            </button>
+          </div>
+          <p>
+            Halaman web ini mengulas penerapan Kecerdasan Buatan (AI) dalam
+            dunia pendidikan, menyoroti berbagai alat bantu seperti Gemini,
+            QuillBot, Magicschool.ai, ChatGPT, WolframAlpha, Quizizz, dan
+            Quizlet yang dirancang untuk meningkatkan efisiensi belajar dan
+            mengajar. AI menawarkan manfaat seperti pembelajaran yang lebih
+            personal, otomatisasi tugas guru, serta analisis mendalam terhadap
+            pola belajar siswa.
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6 animate-element mb-4">
+    <div class="col-md-4 animate-element mb-4">
       <h3 class="text-secondary mb-3">Hubungi Kami</h3>
-      <form>
+      <p id="msg" class="text-success"></p>
+      <form id="contact-form">
         <div class="d-flex gap-4 mb-4 card-msg rounded">
           <span><i class="fa-solid fa-user fs-2"></i></span>
           <input
@@ -213,6 +247,7 @@
             name="name"
             id="name"
             placeholder="Nama"
+            autocomplete="off"
             required
           />
         </div>
@@ -223,6 +258,7 @@
             name="email"
             id="email"
             placeholder="Email"
+            autocomplete="off"
             required
           />
         </div>
@@ -232,10 +268,74 @@
             name="message"
             id="message"
             placeholder="Masukkan pesan Anda"
+            required
           ></textarea>
         </div>
-        <button type="submit" class="rounded" id="submit-btn">Send Message</button>
+        <button type="submit" class="rounded" id="submit-btn">
+          <i class="fa-solid fa-paper-plane text-primary"></i> Kirim Pesan
+        </button>
       </form>
+    </div>
+
+    <!-- Proyek detail modal -->
+    <div id="modal-proyek-1">
+      <div class="modal-container rounded">
+        <a href="#" class="close-icon"><i class="fa-solid fa-xmark"></i></a>
+        <div class="content-modal">
+          <img
+            src="images/projects/proyek-1.png"
+            alt="Proyek-1"
+            class="rounded"
+          />
+          <div class="modal-detail">
+            <h4>SDGS 4 - Edukasi Berkualitas</h4>
+            <p>
+              Web ini membahas Sustainable Development Goal (SDG) nomor 4:
+              Kualitas Pendidikan. SDG 4 menekankan pentingnya pendidikan
+              berkualitas yang inklusif dan adil, serta memberikan kesempatan
+              belajar sepanjang hayat bagi semua orang. Pendidikan adalah kunci
+              untuk membuka potensi individu, meningkatkan kesejahteraan, dan
+              berkontribusi pada masyarakat yang progresif.
+            </p>
+            <a
+              href="https://praktikum-web-staphsec.vercel.app/"
+              class="p-2 rounded"
+              target="_blank"
+              >Kunjungi Webiste</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-proyek-2">
+      <div class="modal-container rounded">
+        <a href="#" class="close-icon"><i class="fa-solid fa-xmark"></i></a>
+        <div class="content-modal">
+          <img
+            src="images/projects/proyek-2.png"
+            alt="Proyek-1"
+            class="rounded"
+          />
+          <div class="modal-detail">
+            <h4>Peran Artificial Intelligence dalam Dunia Pendidikan</h4>
+            <p>
+              Halaman web ini mengulas penerapan Kecerdasan Buatan (AI) dalam
+              dunia pendidikan, menyoroti berbagai alat bantu seperti Gemini,
+              QuillBot, Magicschool.ai, ChatGPT, WolframAlpha, Quizizz, dan
+              Quizlet yang dirancang untuk meningkatkan efisiensi belajar dan
+              mengajar. AI menawarkan manfaat seperti pembelajaran yang lebih
+              personal, otomatisasi tugas guru, serta analisis mendalam terhadap
+              pola belajar siswa.
+            </p>
+            <a
+              href="https://prakweb-bootstrap.vercel.app/"
+              class="p-2 rounded"
+              target="_blank"
+              >Kunjungi Webiste</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

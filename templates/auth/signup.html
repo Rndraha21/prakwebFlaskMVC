@@ -7,7 +7,7 @@
     <form id="login" action="{{ url_for('sign_up') }}" method="POST">
       <div class="mb-3">
         {% if msg %}
-        <ul id="flash-msg-container" class="bg-danger-subtle rounded text-danger-emphasis p-2">
+        <ul id="flash-msg-containerB" class="bg-danger-subtle rounded text-danger-emphasis p-2">
           {% for message in msg %}
           <li class="ms-4">{{ message }}</li>
           {% endfor %}
@@ -35,7 +35,7 @@
             placeholder="Masukkan password"
             required
           />
-          <img src="/img/invisibility.svg" alt="Show Password" id="visible" />
+          <img src="images/icons/visibility.svg" alt="Show Password" id="visible" />
         </div>
       </div>
       <p>

@@ -110,11 +110,13 @@ class DataKaryawan:
 
         return results
 
+
 class Users:
     def __init__(self):
         self._users = [
+            {"username": "admin", "password": "admin123"}
         ]
-        
+
         self._id = 1
 
     def _get_id(self):

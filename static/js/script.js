@@ -75,3 +75,46 @@ if (flasMsg) {
     flasMsg.style.display = "none";
   }, 3000);
 }
+
+// Handle submit, atau prevent default yang ngereload halaman
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const nameEl = document.getElementById("name");
+  const emailEl = document.getElementById("email");
+  const textareaEl = document.getElementById("message");
+
+  const name = nameEl.value;
+  const email = emailEl.value;
+
+  const response = await fetch("/proses-data", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    body: JSON.stringify({ name, email }),
+  });
+
+  const data = await response.json();
+
+  const msgEl = document.getElementById("msg");
+  msgEl.textContent = data.msg;
+
+  setTimeout(() => {
+    msgEl.textContent = "";
+  }, 5000);
+
+  nameEl.value = "";
+  emailEl.value = "";
+  textareaEl.value = "";
+});
+
+const submitBtn = document.getElementById("submit-btn");
+contactForm.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    contactForm.requestSubmit();
+  }
+});

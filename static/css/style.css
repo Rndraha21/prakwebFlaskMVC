@@ -20,6 +20,30 @@ html {
   scroll-padding-top: 2rem;
 }
 
+
+/* Body style */
+.body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: sans-serif;
+  line-height: 1.6;
+  position: relative;
+}
+
+.body::-webkit-scrollbar {
+  width: 0;
+}
+
+.breadcrumb-link {
+  color: var(--text-secondary);
+}
+
+.bg-secondary {
+  background: var(--bg-secondary);
+}
+
+
+/* Komponen Jam */
 #datetime {
   position: fixed;
   text-align: center;
@@ -38,6 +62,7 @@ html {
   border-radius: 10px;
 }
 
+/* Class title global */
 .title {
   position: relative;
   padding-bottom: 1rem;
@@ -55,6 +80,7 @@ html {
   transform: translateX(-50px);
 }
 
+/* Hero section */
 #hero-content .text-primary {
   color: var(--text-primary) !important;
 }
@@ -63,6 +89,7 @@ html {
   color: var(--text-secondary) !important;
 }
 
+/* Tentang section */
 #tentang .text-primary,
 #tim .text-primary {
   color: var(--text-primary) !important;
@@ -88,6 +115,7 @@ html {
   transform: scale(1.05);
 }
 
+/* Tim section */
 #tim .bg-secondary {
   width: 100%;
   margin: 0;
@@ -98,6 +126,7 @@ html {
   height: 25rem;
 }
 
+/* Service section */
 #service .text-primary {
   color: var(--text-primary) !important;
 }
@@ -149,26 +178,11 @@ html {
   font-weight: 500;
 }
 
-.body {
-  background-color: var(--bg-dark);
-  color: var(--text-primary);
-  font-family: sans-serif;
-  line-height: 1.6;
-  position: relative;
+#service form button:hover {
+  background: var(--accent-hover);
 }
 
-.body::-webkit-scrollbar {
-  width: 0;
-}
-
-.breadcrumb-link {
-  color: var(--text-secondary);
-}
-
-.bg-secondary {
-  background: var(--bg-secondary);
-}
-
+/* Breadcrumb style */
 #mainBreadcrumb {
   transition: font-size 0.3s ease;
   border-left: 4px solid var(--bg-tertiary);
@@ -191,6 +205,7 @@ html {
   width: 50px;
 }
 
+/* container style */
 div.container {
   padding-top: 6rem !important;
 }
@@ -288,6 +303,7 @@ form {
   opacity: 0.7;
 }
 
+/* Table style */
 #table {
   width: 100%;
   background-color: var(--bg-secondary) !important;

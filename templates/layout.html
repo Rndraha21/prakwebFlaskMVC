@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="description" content="Aplikasi Sistem Informasi Karyawan (SIKarya) untuk manajemen data SDM yang lebih baik. Menyederhanakan pengelolaan data karyawan di perusahaan Anda.">
+    <meta property="og:title" content="SIKarya | Sistem Informasi Karyawan">
+    <meta property="og:image" content="images/icons/logo.ico">
+    <meta property="og:description" content="Aplikasi Sistem Informasi Karyawan (SIKarya) untuk manajemen data SDM yang lebih baik. Menyederhanakan pengelolaan data karyawan di perusahaan Anda.">
+    <link rel="icon" type="image/svg+xml" href="images/icons/logo.ico">
     <title>{% block title %} Sistem Informasi Karyawan {% endblock %}</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/detail.css" />
     <link
       rel="stylesheet"
       href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -21,9 +26,9 @@
   <body class="body" data-page-id="{% block id %}other{% endblock %}">
     <!-- Navigasi -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
-      <div class="container-fluid">
+      <div class="container-fluid px-5">
         <div class="d-flex align-items-center gap-2">
-          <img src="/img/logo.png" alt="Logo" width="40px" />
+          <img src="images/icons/logo.png" alt="Logo" width="40px" />
           <a href="{{ url_for('index') }}" class="navbar-brand fs-3">SIKarya</a>
         </div>
         <div
@@ -44,7 +49,7 @@
                 >Kelola Data</a
               >
             </li>
-            <div class="rounded p-1 px-2" style="background-color: var(--accent-primary); color:var(--bg-dark)">{{ session["username"] }}</div>
+            <div class="rounded p-1 px-2" style="background-color: var(--accent-primary); color:var(--bg-dark)">{{ session["username"][:12] + "..." if session["username"]|length > 12 else session["username"] }}</div>
             <li class="nav-item">
               <a href="{{ url_for('logout') }}" class="nav-link fs-6 bg-danger rounded py-1 px-2 ms-2"
                 >Logout</a
@@ -53,6 +58,9 @@
             {% else %}
             <li>
               <a href="{{ url_for('login') }}" class="nav-link fs-6">Login</a>
+            </li>
+            <li>
+              <a href="{{ url_for('sign_up') }}" class="nav-link fs-6">Sign Up</a>
             </li>
             {% endif %}
             </li>
@@ -101,4 +109,5 @@
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/script.js"></script>
+  <script src="/js/modal.js"></script>
 </html>

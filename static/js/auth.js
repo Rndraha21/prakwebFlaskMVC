@@ -5,13 +5,13 @@ let inVisible = true;
 
 function visibility() {
   input.type = "text";
-  visibleIcon.src = "/img/visibility.svg";
+  visibleIcon.src = "images/icons/invisibility.svg";
   inVisible = false;
 }
 
 function invisibility() {
   input.type = "password";
-  visibleIcon.src = "/img/invisibility.svg";
+  visibleIcon.src = "images/icons/visibility.svg";
   inVisible = true;
 }
 

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, abort, session,jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, abort, session, jsonify
 from models import DataKaryawan, Users
 import re
 
@@ -108,6 +108,22 @@ def read():
         data = model.get()
     return render_template("read.html", data=data, query=query)
 
+
+# Fungsi untuk menerima post di service section
+@app.route("/proses-data", methods=["POST"])
+def proses_data():
+    data = request.get_json()
+    
+    name = data.get("name")
+    email = data.get("email")
+    
+    print(name, email)
+
+    if name and email:
+        msg = f"Halo, {name} terima kasih telah berkunjung ke web kami. Pesan Anda telah kami terima. "
+        return jsonify({"msg": msg})
+
+    return jsonify({"error": "Missing Data"})
 
 # Route untuk details.html (untuk menampilkan detail karyawan)
 @app.route("/details/<int:id>")
