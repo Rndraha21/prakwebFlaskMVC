@@ -91,9 +91,8 @@ def logout():
     flash("Anda berhasil logout.", "success")
     return redirect(url_for("index"))
 
+
 # Route untuk read.html (menampilkan semua data karyawan)
-
-
 @app.route("/read")
 def read():
     if "username" not in session:
@@ -113,17 +112,25 @@ def read():
 @app.route("/proses-data", methods=["POST"])
 def proses_data():
     data = request.get_json()
-    
+
     name = data.get("name")
     email = data.get("email")
-    
-    print(name, email)
+    message = data.get("message")
+
+    new_data = {
+        "name": name,
+        "email": email,
+        "message": message
+    }
+
+    print(new_data)
 
     if name and email:
         msg = f"Halo, {name} terima kasih telah berkunjung ke web kami. Pesan Anda telah kami terima. "
         return jsonify({"msg": msg})
 
     return jsonify({"error": "Missing Data"})
+
 
 # Route untuk details.html (untuk menampilkan detail karyawan)
 @app.route("/details/<int:id>")

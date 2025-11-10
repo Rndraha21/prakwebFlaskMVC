@@ -88,13 +88,14 @@ contactForm.addEventListener("submit", async (e) => {
 
   const name = nameEl.value;
   const email = emailEl.value;
+  const message = textareaEl.value;
 
   const response = await fetch("/proses-data", {
     method: "POST",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
     },
-    body: JSON.stringify({ name, email }),
+    body: JSON.stringify({ name, email, message }),
   });
 
   const data = await response.json();

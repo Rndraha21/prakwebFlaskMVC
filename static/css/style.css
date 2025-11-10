@@ -179,7 +179,7 @@ html {
 }
 
 #service form button:hover {
-  background: var(--accent-hover);
+  background: var(--bg-secondary);
 }
 
 /* Breadcrumb style */

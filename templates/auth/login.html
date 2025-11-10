@@ -6,7 +6,7 @@
     <form id="login" action="{{ url_for('login') }}" method="POST">
       <div class="mb-3">
         {% if message %}
-        <p class="text-danger" id="flash-msg-container">{{ message }}</p>
+        <p class="text-danger-emphasis bg-danger-subtle p-2 rounded fst-italic" id="flash-msg-container"><i class="fa-solid fa-ban"></i> {{ message }}</p>
         {% endif %}
         <label for="username" class="form-label">Username</label>
         <input
